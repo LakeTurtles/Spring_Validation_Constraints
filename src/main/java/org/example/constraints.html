@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Bean Validation Constraints</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        pre {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Java Bean Validation Constraints</h1>
+
+<p>
+    Here is a list of commonly used Java Bean Validation constraints with examples:
+</p>
+
+<div class="card">
+    <h2>@NotNull</h2>
+    <p>Ensures that the annotated element is not <code>null</code>.</p>
+    <pre><code>@NotNull
+private String name;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@NotEmpty</h2>
+    <p>Ensures that the annotated string is not <code>null</code> and has a length greater than zero.</p>
+    <pre><code>@NotEmpty
+private String email;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@NotBlank</h2>
+    <p>Ensures that the annotated string is not <code>null</code> and has at least one non-whitespace character.</p>
+    <pre><code>@NotBlank
+private String username;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@Size</h2>
+    <p>Specifies the size constraints on a string, collection, or array.</p>
+    <pre><code>@Size(min = 2, max = 10)
+private List&lt;String&gt; tags;</code></pre>
+    <pre><code>@Size(min = 5, max = 255)
+private String description;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@Min</h2>
+    <p>Specifies the minimum value for numeric fields.</p>
+    <pre><code>@Min(18)
+private int age;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@Max</h2>
+    <p>Specifies the maximum value for numeric fields.</p>
+    <pre><code>@Max(100)
+private int score;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@DecimalMin</h2>
+    <p>Specifies the minimum value for decimal numbers.</p>
+    <pre><code>@DecimalMin("0.5")
+private BigDecimal minAmount;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@DecimalMax</h2>
+    <p>Specifies the maximum value for decimal numbers.</p>
+    <pre><code>@DecimalMax("100.0")
+private BigDecimal maxAmount;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@Digits</h2>
+    <p>Specifies the exact number of digits in integral and fractional parts of a number.</p>
+    <pre><code>@Digits(integer = 3, fraction = 2)
+private BigDecimal numericValue;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@Email</h2>
+    <p>Ensures that the annotated string is a valid email address.</p>
+    <pre><code>@Email
+private String emailAddress;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@Pattern</h2>
+    <p>Applies a regular expression pattern constraint.</p>
+    <pre><code>@Pattern(regexp = "^[A-Za-z0-9]+$")
+private String alphanumeric;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@AssertTrue</h2>
+    <p>Ensures that the annotated element is <code>true</code>.</p>
+    <pre><code>@AssertTrue
+private boolean active;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@AssertFalse</h2>
+    <p>Ensures that the annotated element is <code>false</code>.</p>
+    <pre><code>@AssertFalse
+private boolean inactive;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@Future</h2>
+    <p>Ensures that the annotated date is in the future.</p>
+    <pre><code>@Future
+private LocalDate futureDate;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@FutureOrPresent</h2>
+    <p>Ensures that the annotated date is in the future or the present.</p>
+    <pre><code>@FutureOrPresent
+private LocalDateTime futureOrPresentDateTime;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@Past</h2>
+    <p>Ensures that the annotated date is in the past.</p>
+    <pre><code>@Past
+private LocalDate pastDate;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@PastOrPresent</h2>
+    <p>Ensures that the annotated date is in the past or the present.</p>
+    <pre><code>@PastOrPresent
+private LocalDateTime pastOrPresentDateTime;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@Null</h2>
+    <p>Ensures that the annotated element is <code>null</code>.</p>
+    <pre><code>@Null
+private String nullValue;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@Positive</h2>
+    <p>Ensures that the annotated numeric value is positive.</p>
+    <pre><code>@Positive
+private int positiveNumber;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@PositiveOrZero</h2>
+    <p>Ensures that the annotated numeric value is positive or zero.</p>
+    <pre><code>@PositiveOrZero
+private int positiveOrZeroNumber;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@Negative</h2>
+    <p>Ensures that the annotated numeric value is negative.</p>
+    <pre><code>@Negative
+private int negativeNumber;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@NegativeOrZero</h2>
+    <p>Ensures that the annotated numeric value is negative or zero.</p>
+    <pre><code>@NegativeOrZero
+private int negativeOrZeroNumber;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@CreditCardNumber</h2>
+    <p>Validates that a given string is a valid credit card number.</p>
+    <pre><code>@CreditCardNumber
+private String creditCardNumber;</code></pre>
+</div>
+
+<div class="card">
+    <h2>@URL</h2>
+    <p>Ensures that the annotated string is a valid URL.</p>
+    <pre><code>@URL
+private String websiteUrl;</code></pre>
+</div>
+
+</body>
+
+</html>
